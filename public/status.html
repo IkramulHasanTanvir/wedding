@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Check My Status · Wedding Panjabi Collection</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">✦ <span data-event-title>Wedding Panjabi Collection</span></a>
+  <nav><a href="/">Register</a><a href="/status" aria-current="page">Check My Status</a></nav>
+</div></header>
+
+<main><div class="wrap">
+  <div class="hero">
+    <div class="orn">✦ ✦ ✦</div>
+    <h1>Check My Status</h1>
+    <p class="sub">Enter your mobile number or unique ID.</p>
+  </div>
+
+  <form id="statusForm" class="card" novalidate>
+    <div id="statusMsg" class="msg err" hidden role="alert"></div>
+    <div class="field">
+      <label for="query">Mobile number or ID</label>
+      <input id="query" type="text" autocomplete="off" placeholder="01XXXXXXXXX or FW-XXXXX" maxlength="30" required>
+    </div>
+    <button class="btn block" id="checkBtn" type="submit">Check Status</button>
+  </form>
+
+  <section id="result" class="card" hidden aria-live="polite">
+    <h2>Your Details</h2>
+    <dl class="details" id="resultDetails"></dl>
+    <p class="hint" id="liveNote">Updates automatically.</p>
+  </section>
+</div></main>
+<footer class="site">Private page · for friends only</footer>
+<script src="/app.js"></script>
+<script src="/status.js"></script>
+</body>
+</html>

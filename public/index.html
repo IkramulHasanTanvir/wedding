@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register · Wedding Panjabi Collection</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">✦ <span data-event-title>Wedding Panjabi Collection</span></a>
+  <nav><a href="/" aria-current="page">Register</a><a href="/status">Check My Status</a></nav>
+</div></header>
+
+<main><div class="wrap">
+  <section id="formView">
+    <div class="hero">
+      <div class="orn">✦ ✦ ✦</div>
+      <h1>Friends Registration</h1>
+      <p class="sub">Fill in your details and choose how you'll pay.</p>
+    </div>
+
+    <form id="regForm" class="card" novalidate>
+      <div id="formMsg" class="msg err" hidden role="alert"></div>
+
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required>
+      </div>
+
+      <div class="field">
+        <label for="size">Panjabi Size</label>
+        <input id="size" name="size" type="text" inputmode="text" maxlength="10" placeholder="e.g. 40, 42, 44" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Mobile Number</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" maxlength="18" required>
+        <div class="hint">Used to check your payment status later.</div>
+      </div>
+
+      <div class="field">
+        <span class="lbl">Payment Method</span>
+        <div class="choices" role="radiogroup" aria-label="Payment method">
+          <label class="choice"><input type="radio" name="method" value="bkash"><span>bKash</span></label>
+          <label class="choice"><input type="radio" name="method" value="cash"><span>Cash</span></label>
+        </div>
+      </div>
+
+      <div id="bkashPanel" class="panel" hidden>
+        <div class="lbl">Send payment to this bKash number</div>
+        <div class="numrow">
+          <span class="num" id="bkashNum">…</span>
+          <button type="button" class="btn ghost small" id="copyBtn">Copy Number</button>
+        </div>
+        <div class="hint" id="bkashName"></div>
+        <div class="field tight">
+          <label for="sender">Your bKash number <span class="opt">(optional)</span></label>
+          <input id="sender" name="sender" type="tel" inputmode="tel" placeholder="Number you sent from" maxlength="18">
+          <div class="hint">Helps the admin match your payment faster.</div>
+        </div>
+      </div>
+
+      <div id="cashPanel" class="panel" hidden>
+        <label class="check">
+          <input type="checkbox" id="cashConfirm">
+          <span>I will pay cash to <span data-cash-receiver>Tanvir Hridoy</span>.</span>
+        </label>
+      </div>
+
+      <button class="btn block" id="submitBtn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="doneView" class="card confirm" hidden>
+    <div class="tick">✓</div>
+    <h2>Registration received</h2>
+    <p class="sub">Thank you! Save your unique ID to check your payment status.</p>
+    <div class="idbox" id="doneId"></div>
+    <dl class="details" id="doneDetails"></dl>
+    <p class="hint" id="doneNote"></p>
+    <div class="row-actions">
+      <a class="btn" id="doneStatusLink" href="/status">Check My Status</a>
+    </div>
+  </section>
+</div></main>
+<footer class="site">Private page · for friends only</footer>
+<script src="/app.js"></script>
+<script src="/register.js"></script>
+</body>
+</html>

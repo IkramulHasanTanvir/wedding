@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin · Wedding Panjabi Collection</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap wide">
+  <a class="brand" href="/">✦ <span data-event-title>Wedding Panjabi Collection</span> · Admin</a>
+  <nav><a href="/">Registration page</a><a href="#" id="logoutLink" hidden>Log out</a></nav>
+</div></header>
+
+<main><div class="wrap wide">
+
+  <section id="loginView" class="login-box" hidden>
+    <div class="hero"><div class="orn">✦ ✦ ✦</div><h1>Admin Login</h1></div>
+    <form id="loginForm" class="card" novalidate>
+      <div id="loginMsg" class="msg err" hidden role="alert"></div>
+      <div class="field">
+        <label for="username">User ID</label>
+        <input id="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </div>
+      <button class="btn block" type="submit" id="loginBtn">Log in</button>
+    </form>
+  </section>
+
+  <section id="dashView" hidden>
+    <div class="stats">
+      <div class="stat"><b id="sTotal">0</b><span>Total friends</span></div>
+      <div class="stat"><b id="sDone">0</b><span>Completed</span></div>
+      <div class="stat"><b id="sPending">0</b><span>Pending</span></div>
+    </div>
+
+    <div id="dashMsg" class="msg err" hidden role="alert"></div>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search name, ID or number…" aria-label="Search">
+      <select id="filter" class="filter-select" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Payment Completed</option>
+      </select>
+    </div>
+
+    <div class="card tablewrap">
+      <table>
+        <thead><tr><th>Name</th><th>Panjabi Size</th><th>Payment Method</th><th>Payment Status</th><th>Actions</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div id="empty" class="empty" hidden>No records found.</div>
+    </div>
+  </section>
+</div></main>
+
+<dialog id="editDlg">
+  <form id="editForm" novalidate>
+    <h2>Edit record</h2>
+    <div id="editMsg" class="msg err" hidden role="alert"></div>
+    <div class="field"><label for="eName">Full Name</label><input id="eName" type="text" maxlength="80"></div>
+    <div class="field"><label for="eSize">Panjabi Size</label><input id="eSize" type="text" maxlength="10"></div>
+    <div class="field"><label for="ePhone">Mobile Number</label><input id="ePhone" type="tel" maxlength="18"></div>
+    <div class="field"><label for="eMethod">Payment Method</label>
+      <select id="eMethod"><option value="bkash">bKash</option><option value="cash">Cash</option></select></div>
+    <div class="field" id="eSenderField"><label for="eSender">Sender bKash number <span class="opt">(optional)</span></label>
+      <input id="eSender" type="tel" maxlength="18"></div>
+    <div class="field"><label for="eStatus">Payment Status</label>
+      <select id="eStatus"><option value="pending">Pending</option><option value="completed">Payment Completed</option></select></div>
+    <div class="dlg-actions">
+      <button type="button" class="btn ghost" id="editCancel">Cancel</button>
+      <button type="submit" class="btn" id="editSave">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<footer class="site">Private admin area</footer>
+<script src="/app.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>

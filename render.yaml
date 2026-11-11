@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: wedding-manager
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/config
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: ADMIN_USERNAME
+        value: tanvir
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: BKASH_NUMBER
+        sync: false
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
+      - key: BKASH_ACCOUNT_NAME
+        value: Tanvir Hridoy
+      - key: CASH_RECEIVER
+        value: Tanvir Hridoy
+      - key: EVENT_TITLE
+        value: Wedding Panjabi Collection
